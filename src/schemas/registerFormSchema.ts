@@ -10,8 +10,8 @@ const emailSchema = z
 
 const passwordSchema = z
   .string()
-  .min(6, { message: "A senha deve ter no mínimo 6 caracteres" })
-  .min(1, { message: "A senha é obrigatória" });
+  .min(1, { message: "A senha é obrigatória" })
+  .min(6, { message: "A senha deve ter no mínimo 6 caracteres" });
 
 const phoneNumberSchema = z
   .string()
