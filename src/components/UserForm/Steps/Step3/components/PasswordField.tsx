@@ -8,7 +8,7 @@ export function PasswordField() {
         <Form.Input
           name="password"
           placeholder="Digite a sua senha"
-          type="text"
+          type="password"
         />
       </Form.Label>
       <Form.ErrorMessage field="password" />

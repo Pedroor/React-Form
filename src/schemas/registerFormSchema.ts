@@ -1,5 +1,7 @@
 import { z } from "zod";
 import { UserType } from "../types/registerForm.types";
+import { isValidDate, isValidCPF, isValidCNPJ } from "../utils/validations";
+import { formatCPF } from "../utils/formatters";
 
 const emailSchema = z
   .string()
@@ -33,10 +35,13 @@ export const personUserBaseSchema = z.object({
   cpf: z
     .string()
     .min(11, { message: "O CPF deve ter no mínimo 11 caracteres" })
-    .max(14, { message: "O CPF deve ter no máximo 14 caracteres" }),
+    .max(14, { message: "O CPF deve ter no máximo 14 caracteres" })
+    .refine((cpf) => isValidCPF(cpf), { message: "CPF inválido" })
+    .transform((cpf) => formatCPF(cpf)),
   birthDate: z
     .string()
-    .min(1, { message: "A data de nascimento é obrigatória" }),
+    .min(1, { message: "A data de nascimento é obrigatória" })
+    .refine(isValidDate, { message: "A data não pode ser no futuro" }),
   phoneNumber: phoneNumberSchema,
 });
 
@@ -45,10 +50,12 @@ export const businessUserBaseSchema = z.object({
   cnpj: z
     .string()
     .min(14, { message: "O CNPJ deve ter no mínimo 14 caracteres" })
-    .max(18, { message: "O CNPJ deve ter no máximo 18 caracteres" }),
+    .max(18, { message: "O CNPJ deve ter no máximo 18 caracteres" })
+    .refine((cnpj) => isValidCNPJ(cnpj), { message: "CNPJ inválido" }),
   openingDate: z
     .string()
-    .min(1, { message: "A data de abertura é obrigatória" }),
+    .min(1, { message: "A data de abertura é obrigatória" })
+    .refine(isValidDate, { message: "A data não pode ser no futuro" }),
   phoneNumber: phoneNumberSchema,
 });
 
