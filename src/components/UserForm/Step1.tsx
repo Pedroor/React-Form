@@ -6,7 +6,7 @@ import {
 } from "../../types/registerForm.types";
 import { Form } from "../Form";
 
-export function Step1({ onNext }: StepProps) {
+export default function Step1({ onNext }: StepProps) {
   const { handleSubmit } = useFormContext();
 
   const submitStep1 = (data: Partial<RegisterFormData>) => {

@@ -3,7 +3,7 @@ import { RegisterFormData, StepProps } from "../../types/registerForm.types";
 import { UserForm } from ".";
 import { Form } from "../Form";
 
-export function Step3({ goBack, onNext }: StepProps) {
+export default function Step3({ goBack, onNext }: StepProps) {
   const { handleSubmit } = useFormContext();
 
   const submitStep3 = (data: Partial<RegisterFormData>) => {

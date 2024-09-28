@@ -5,9 +5,10 @@ import {
   UserType,
 } from "../../../types/registerForm.types";
 import { UserForm } from "..";
-import { Step2 } from ".";
+import { BusinessFields } from "./BusinessFields";
+import { PersonFields } from "./PersonFields";
 
-export function Step({ goBack, onNext, userType }: StepProps) {
+export default function Step2({ goBack, onNext, userType }: StepProps) {
   const { handleSubmit, formState } = useFormContext();
 
   console.log(formState.errors);
@@ -17,9 +18,9 @@ export function Step({ goBack, onNext, userType }: StepProps) {
   };
   const getFields = () => {
     if (userType === UserType.BUSINESS) {
-      return <Step2.BusinessFields />;
+      return <BusinessFields />;
     } else {
-      return <Step2.PersonFields />;
+      return <PersonFields />;
     }
   };
 

@@ -1,9 +1,11 @@
+import { lazy } from "react";
 import Footer from "./Footer";
-import { Step1 } from "./Step1";
-import { Step2 } from "./Step2";
-import { Step3 } from "./Step3";
-import { Step4 } from "./Step4";
 import StepInfo from "./StepInfo";
+
+const Step1 = lazy(() => import("./Step1"));
+const Step2 = lazy(() => import("./Step2/Step2"));
+const Step3 = lazy(() => import("./Step3"));
+const Step4 = lazy(() => import("./Step4"));
 
 export const UserForm = {
   Footer,
