@@ -18,9 +18,17 @@ export function Step({ goBack, onNext, userType }: StepProps) {
     console.log("DATA", data);
     onNext(data as RegisterFormData);
   };
+  const getFields = () => {
+    if (userType === UserType.BUSINESS) {
+      return <Step2.BusinessFields />;
+    } else {
+      return <Step2.PersonFields />;
+    }
+  };
+
   return (
     <form onSubmit={handleSubmit(submitStep2)}>
-      <Step2.BusinessFields />
+      {getFields()}
       <UserForm.Footer goBack={goBack} />
     </form>
   );
