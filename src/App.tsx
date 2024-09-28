@@ -8,6 +8,7 @@ import { UserForm } from "./components/UserForm";
 
 function App() {
   const [step, setStep] = useState(1);
+  const [output, setOutput] = useState("");
   const [userType, setUserType] = useState<UserType>(UserType.NONE);
   const createUserForm = useForm<RegisterFormData>({
     resolver: zodResolver(getUserSchema(step, userType)),
@@ -15,26 +16,27 @@ function App() {
   });
 
   const {
-    // handleSubmit,
     // formState: { isSubmitting },
     trigger,
     reset,
   } = createUserForm;
 
   async function onNext(data: RegisterFormData) {
-    console.log("OI");
-
     const isValid = await trigger();
 
     if (isValid) {
       if (step === 1) {
         setUserType(data.userType);
       }
-
       setStep(step + 1);
 
       reset({}, { keepValues: true });
     }
+  }
+
+  function resetForm() {
+    setStep(1);
+    reset();
   }
 
   async function goBack() {
@@ -42,7 +44,8 @@ function App() {
   }
 
   async function createUser(data: RegisterFormData) {
-    console.log(data);
+    setStep(0);
+    setOutput(JSON.stringify(data, null, 2));
   }
 
   return (
@@ -72,6 +75,19 @@ function App() {
           </div>
         </div>
       </FormProvider>
+      {step === 0 && (
+        <>
+          <pre>{output}</pre>
+
+          <button
+            type="button"
+            className="w-full h-10 bg-orange-400 text-white py-1 px-3 rounded mt-4"
+            onClick={resetForm}
+          >
+            Resetar
+          </button>
+        </>
+      )}
     </main>
   );
 }
