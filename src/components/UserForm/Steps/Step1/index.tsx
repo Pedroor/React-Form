@@ -7,12 +7,13 @@ import { EmailField } from "./components/EmailField";
 import { UserTypeField } from "./components/UserTypeField";
 
 export default function Step1({ onNext }: StepProps) {
-  const { handleSubmit } = useFormContext();
+  const { handleSubmit, watch } = useFormContext();
 
   const submitStep1 = (data: Partial<RegisterFormData>) => {
     onNext(data as RegisterFormData);
   };
 
+  console.log(watch());
   return (
     <>
       <form onSubmit={handleSubmit(submitStep1)}>

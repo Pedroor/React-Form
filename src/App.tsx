@@ -22,6 +22,8 @@ function App() {
   } = createUserForm;
 
   async function onNext(data: RegisterFormData) {
+    console.log("OI");
+
     const isValid = await trigger();
 
     if (isValid) {

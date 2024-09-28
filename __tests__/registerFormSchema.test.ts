@@ -4,8 +4,8 @@ import {
   personUserBaseSchema,
   step1Schema,
   step3Schema,
-} from "../schemas/registerFormSchema";
-import { UserType } from "../types/registerForm.types";
+} from "../src/schemas/registerFormSchema";
+import { UserType } from "../src/types/registerForm.types";
 
 describe("Step 1 Validation Schema", () => {
   it("should pass with valid email and user type", () => {

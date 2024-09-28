@@ -5,8 +5,8 @@ import { formatCPF } from "../utils/formatters";
 
 const emailSchema = z
   .string()
-  .email({ message: "Formato de e-mail inválido" })
-  .min(1, { message: "O e-mail é obrigatório" });
+  .min(1, { message: "O e-mail é obrigatório" })
+  .email({ message: "Formato de e-mail inválido" });
 
 const passwordSchema = z
   .string()
