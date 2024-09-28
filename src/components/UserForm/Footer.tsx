@@ -1,8 +1,9 @@
 interface IFooterProps {
   goBack: (() => Promise<void>) | undefined;
+  submitButtonLabel?: string;
 }
 
-function Footer({ goBack }: IFooterProps) {
+function Footer({ goBack, submitButtonLabel = "Continuar" }: IFooterProps) {
   return (
     <div className="flex justify-between mt-4 gap-4">
       <button
@@ -16,7 +17,7 @@ function Footer({ goBack }: IFooterProps) {
         type="submit"
         className="w-full h-10 bg-orange-400 text-white py-2 px-4 rounded"
       >
-        Continuar
+        {submitButtonLabel}
       </button>
     </div>
   );

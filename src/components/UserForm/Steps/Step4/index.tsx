@@ -30,7 +30,7 @@ export default function Step4({ goBack, onNext, userType }: StepProps) {
       <EmailField />
       {getFields()}
       <PasswordField />
-      <UserForm.Footer goBack={goBack} />
+      <UserForm.Footer goBack={goBack} submitButtonLabel="Cadastrar" />
     </form>
   );
 }
