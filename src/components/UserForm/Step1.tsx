@@ -36,7 +36,7 @@ export function Step1({ onNext }: StepProps) {
         </div>
         <button
           type="submit"
-          className="bg-orange-400 text-white py-1 px-3 rounded mt-4"
+          className="w-full h-10 bg-orange-400 text-white py-1 px-3 rounded mt-4"
         >
           Continuar
         </button>

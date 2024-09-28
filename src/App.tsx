@@ -49,9 +49,9 @@ function App() {
   }
 
   return (
-    <main className="h-screen flex flex-col items-center justify-center">
+    <main className="h-screen flex flex-col items-center justify-center px-4">
       <FormProvider {...createUserForm}>
-        <div className="flex flex-col items-center gap-6 max-w-xs">
+        <div className="flex flex-col items-center gap-6 w-full max-w-sm mt-6">
           <div className="w-full">
             <UserForm.StepInfo step={step} />
             {step === 1 && <UserForm.Step1 onNext={onNext} />}
