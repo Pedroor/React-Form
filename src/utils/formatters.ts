@@ -20,3 +20,4 @@ export function formatCNPJ(cnpj: string) {
     .replace(/\.(\d{3})(\d)/, ".$1/$2")
     .replace(/(\d{4})(\d)/, "$1-$2");
 }
+export const removeMask = (value: string) => value.replace(/[^\d]/g, "");
