@@ -1,5 +1,7 @@
 import {
+  businessUserBaseSchema,
   businessUserFinalSchema,
+  personUserBaseSchema,
   personUserFinalSchema,
   step1Schema,
   step3Schema,
@@ -18,7 +20,12 @@ export function getUserSchema(
     return step3Schema;
   }
 
-  if (step === 4 || step === 2) {
+  if (step === 2) {
+    return userType === UserType.PERSON
+      ? personUserBaseSchema
+      : businessUserBaseSchema;
+  }
+  if (step === 4) {
     return userType === UserType.PERSON
       ? personUserFinalSchema
       : businessUserFinalSchema;

@@ -8,14 +8,11 @@ import { UserForm } from "..";
 import { Step2 } from ".";
 
 export function Step({ goBack, onNext, userType }: StepProps) {
-  const { handleSubmit } = useFormContext();
-  const title =
-    userType === UserType.BUSINESS ? "Pessoa Jurídica" : "Pessoa Física";
-  console.log(title);
+  const { handleSubmit, formState } = useFormContext();
+
+  console.log(formState.errors);
 
   const submitStep2 = (data: Partial<RegisterFormData>) => {
-    console.log("OI");
-    console.log("DATA", data);
     onNext(data as RegisterFormData);
   };
   const getFields = () => {

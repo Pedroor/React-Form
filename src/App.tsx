@@ -14,14 +14,13 @@ function App() {
   });
 
   const {
-    handleSubmit,
-    formState: { isSubmitting },
+    // handleSubmit,
+    // formState: { isSubmitting },
     trigger,
-    watch,
     reset,
   } = createUserForm;
 
-  const watchedUserType = watch("userType");
+  // const watchedUserType = watch("userType");
 
   async function onNext(data: RegisterFormData) {
     const isValid = await trigger(); // Valida o step atual
@@ -59,6 +58,14 @@ function App() {
               <UserForm.Step2.Step
                 onNext={onNext}
                 goBack={goBack}
+                userType={userType}
+              />
+            )}
+            {step === 3 && <UserForm.Step3 goBack={goBack} onNext={onNext} />}
+            {step === 4 && (
+              <UserForm.Step4
+                goBack={goBack}
+                onNext={createUser}
                 userType={userType}
               />
             )}
