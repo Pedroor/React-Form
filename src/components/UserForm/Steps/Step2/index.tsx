@@ -3,15 +3,13 @@ import {
   RegisterFormData,
   StepProps,
   UserType,
-} from "../../../types/registerForm.types";
-import { UserForm } from "..";
-import { BusinessFields } from "./BusinessFields";
-import { PersonFields } from "./PersonFields";
+} from "../../../../types/registerForm.types";
+import { UserForm } from "../..";
+import { BusinessFields } from "./components/BusinessFields";
+import { PersonFields } from "./components/PersonFields";
 
 export default function Step2({ goBack, onNext, userType }: StepProps) {
-  const { handleSubmit, formState } = useFormContext();
-
-  console.log(formState.errors);
+  const { handleSubmit } = useFormContext();
 
   const submitStep2 = (data: Partial<RegisterFormData>) => {
     onNext(data as RegisterFormData);

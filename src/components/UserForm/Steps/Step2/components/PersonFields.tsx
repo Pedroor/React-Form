@@ -1,37 +1,36 @@
-import { Form } from "../../Form";
+import { Form } from "../../../../Form";
 
-interface IBussinessFieldsProps {
+interface IPersonFieldsProps {
   withTitle?: boolean;
 }
-
-export function BusinessFields({ withTitle = true }: IBussinessFieldsProps) {
+export function PersonFields({ withTitle = true }: IPersonFieldsProps) {
   return (
     <>
-      {withTitle && <h2 className="text-lg font-bold">Pessoa Júridica</h2>}
+      {withTitle && <h2 className="text-lg font-bold">Pessoa Física</h2>}
       <Form.Field>
         <Form.Label className="flex flex-col font-medium text-sm">
-          Razão Social
+          Nome
           <Form.Input
-            name="companyName"
-            placeholder="Digite a razão social"
+            name="fullName"
+            placeholder="Digite o seu nome"
             type="text"
           />
         </Form.Label>
-        <Form.ErrorMessage field="companyName" />
+        <Form.ErrorMessage field="fullName" />
       </Form.Field>
       <Form.Field>
         <Form.Label className="flex flex-col font-medium text-sm">
-          CNPJ
-          <Form.Input name="cnpj" placeholder="Digite o CNPJ" type="text" />
+          CPF
+          <Form.Input name="cpf" placeholder="Digite o seu CPF" type="text" />
         </Form.Label>
-        <Form.ErrorMessage field="cnpj" />
+        <Form.ErrorMessage field="cpf" />
       </Form.Field>
       <Form.Field>
         <Form.Label className="flex flex-col font-medium text-sm">
-          Data de Abertura
-          <Form.Input name="openingDate" type="date" />
+          Data de nascimento
+          <Form.Input name="birthDate" type="date" />
         </Form.Label>
-        <Form.ErrorMessage field="openingDate" />
+        <Form.ErrorMessage field="birthDate" />
       </Form.Field>
       <Form.Field>
         <Form.Label className="flex flex-col font-medium text-sm">
