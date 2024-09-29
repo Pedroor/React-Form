@@ -33,6 +33,6 @@ export const dynamicValidationMiddleware = async (
     res.status(400).json({ errors: formattedErrors });
   } else {
     req.body = dtoObject;
-    next(); // Continua para o próximo middleware se a validação passar
+    next();
   }
 };

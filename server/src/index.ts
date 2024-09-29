@@ -18,7 +18,7 @@ app.post("/register", dynamicValidationMiddleware, (req, res) => {
   res.status(201).json(req.body);
 });
 
-const PORT = 4000;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });

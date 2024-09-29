@@ -13,8 +13,8 @@ import { EmailField } from "../Step1/components/EmailField";
 export default function Step4({ goBack, onNext, userType }: StepProps) {
   const { handleSubmit } = useFormContext();
 
-  const submitStep4 = (data: Partial<RegisterFormData>) => {
-    onNext(data as RegisterFormData);
+  const submitStep4 = async (data: Partial<RegisterFormData>) => {
+    await onNext(data as RegisterFormData);
   };
   const getFields = () => {
     if (userType === UserType.BUSINESS) {

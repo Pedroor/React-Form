@@ -5,7 +5,7 @@ import {
   personUserFinalSchema,
   step1Schema,
   step3Schema,
-} from "../schemas/registerFormSchema";
+} from "../schemas/userFormSchema";
 import { UserSchemaType, UserType } from "../types/registerForm.types";
 
 export function getUserSchema(

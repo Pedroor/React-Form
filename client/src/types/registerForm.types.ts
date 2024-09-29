@@ -6,7 +6,7 @@ import {
   personUserFinalSchema,
   step1Schema,
   step3Schema,
-} from "../schemas/registerFormSchema";
+} from "../schemas/userFormSchema";
 
 export enum UserType {
   PERSON = "Person",
