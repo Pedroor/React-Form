@@ -14,13 +14,7 @@
 </p>
 
 <h1 align="center">
- <img alt="Home" src="https://imgur.com/w0FINpN" width="400" />
- <img alt="Home" src="https://i.imgur.com/GiwUdxo.png" width="400" />
-  <h1 align="center">
- <img alt="Home" src="https://i.imgur.com/RJxwcSG.png" width="400" />
- <img alt="Home" src="https://imgur.com/iEne3cV" width="400" />
-
-
+ <img alt="Home" src="https://user-images.githubusercontent.com/83235141/225743749-ca86ca69-5902-4a75-bb42-d6c0fc169bf4.png" width="800" />
 </h1>
 
 
