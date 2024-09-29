@@ -2,25 +2,23 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import { dynamicValidationMiddleware } from "./middlewares/validationMiddleware";
 
 const app = express();
 
-// Middleware para habilitar CORS e JSON parsing
 app.use(cors());
 app.use(express.json());
 
-// Serve os arquivos estáticos do React (após o build)
 app.use(express.static(path.join(__dirname, "../../client/dist")));
 
-// Usar as rotas de registro
-
-// Para qualquer outra rota, sirva o index.html do React
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../../client/dist/index.html"));
 });
+app.post("/register", dynamicValidationMiddleware, (req, res) => {
+  res.status(201).json(req.body);
+});
 
-// Iniciar o servidor
-const PORT = 3000;
+const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
