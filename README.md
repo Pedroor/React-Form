@@ -62,7 +62,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   $ cd server && yarn
 ```
 
-## 📺: Iniciando Aplicação
+## 📺 Iniciando Aplicação
 ```bash
   # No diretório do client executar:
   $ yarn build
@@ -74,7 +74,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   $ acessar a aplicação através da porta localhost:3000
 ```
 
-## SOS: Para executar o testes unitários no client basta:
+## Para executar o testes unitários no client basta:
 ```bash
   # No diretório do client executar:
   $ yarn test
