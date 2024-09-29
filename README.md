@@ -74,6 +74,13 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   $ acessar a aplicação através da porta localhost:3000
 ```
 
+## SOS: Para executar o testes unitários no client basta:
+```bash
+  # No diretório do client executar:
+  $ yarn test
+ 
+```
+
 # :thought_balloon: Créditos
 
 Feito com ❤️ por Pedro Arthur 👋🏻 [Get in touch!](https://github.com/Pedroor)
