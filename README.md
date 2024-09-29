@@ -23,7 +23,7 @@
 ## :page_with_curl: Sobre
 
 PS: Formulário React onde o server carrega o bundle do frontend, para construir o formulário, lógica e gerenciamento de estado foi utilizado o React-Hook-Form, o form foi implementando em uma única página
-com carregamento dinâmico de cada Step utilizando Suspende, para validações foi utilizado o Zod e para testes unitários foi utilizado o Vitest
+com carregamento dinâmico de cada Step utilizando a api do React -> Suspend, para validações foi utilizado o Zod e para testes unitários foi utilizado o Vitest
 
 
 Segue o link para consulta do layout: - - [APP](https://user-images.githubusercontent.com/83235141/225743749-ca86ca69-5902-4a75-bb42-d6c0fc169bf4.png) 
