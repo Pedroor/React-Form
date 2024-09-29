@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   businessUserBaseSchema,
   personUserBaseSchema,
-} from "../src/schemas/registerFormSchema";
+} from "../src/schemas/userFormSchema";
 import { UserType } from "../src/types/registerForm.types";
 import Step4 from "../src/components/UserForm/Steps/Step4";
 

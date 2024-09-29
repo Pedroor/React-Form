@@ -3,7 +3,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { step3Schema } from "../src/schemas/registerFormSchema";
+import { step3Schema } from "../src/schemas/userFormSchema";
 import Step3 from "../src/components/UserForm/Steps/Step3";
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {

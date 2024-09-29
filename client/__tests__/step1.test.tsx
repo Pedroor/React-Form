@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Step1 from "../src/components/UserForm/Steps/Step1";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { step1Schema } from "../src/schemas/registerFormSchema";
+import { step1Schema } from "../src/schemas/userFormSchema";
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
   const methods = useForm({

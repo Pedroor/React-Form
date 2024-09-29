@@ -4,7 +4,7 @@ import {
   personUserBaseSchema,
   step1Schema,
   step3Schema,
-} from "../src/schemas/registerFormSchema";
+} from "../src/schemas/userFormSchema";
 import { UserType } from "../src/types/registerForm.types";
 
 describe("Step 1 Validation Schema", () => {
